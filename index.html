@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PARIS 🗼 · Compatibilidad de Amor</title>
+    <meta name="description" content="PARIS, la app para saber si esa persona es el amor de tu vida, tu tal para cual… o tu enemigo. Test de compatibilidad de amor con consejos." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85'%3E🗼%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- floating hearts & sparkles background -->
+    <div class="hearts" id="hearts" aria-hidden="true"></div>
+
+    <header class="hero">
+      <p class="kicker">🗼 PARIS · TEST DE COMPATIBILIDAD</p>
+      <h1 class="title">PARIS 🗼<br />¿Amor de tu vida…<br />o <span class="enemy">tu enemigo</span>?</h1>
+      <p class="subtitle">Escribe sus nombres, deja que los astros y el corazón hagan las matemáticas, y recibe consejos honestos sobre esa persona.</p>
+    </header>
+
+    <main class="page">
+      <!-- FORM -->
+      <section class="card" id="form-card">
+        <h2 class="card-title">Tu historia empieza con un nombre</h2>
+
+        <form id="love-form" class="form" autocomplete="off">
+          <div class="field">
+            <label for="name-a">👤 Tú</label>
+            <input id="name-a" name="nameA" type="text" placeholder="Ej: Sofi" required maxlength="40" />
+          </div>
+
+          <div class="vs-badge">VS</div>
+
+          <div class="field">
+            <label for="name-b">💝 Esa persona</label>
+            <input id="name-b" name="nameB" type="text" placeholder="Ej: Alex" required maxlength="40" />
+          </div>
+
+          <div class="dates">
+            <div class="field">
+              <label for="date-a">Tu fecha de nacimiento (opcional)</label>
+              <input id="date-a" name="dateA" type="date" />
+            </div>
+            <div class="field">
+              <label for="date-b">Su fecha de nacimiento (opcional)</label>
+              <input id="date-b" name="dateB" type="date" />
+            </div>
+          </div>
+
+          <button class="btn btn-love" type="submit">💖 Calcular compatibilidad</button>
+        </form>
+
+        <p class="fineprint">100% científico* · *científicamente divertido. Los astros colaboran si pones las fechas.</p>
+      </section>
+
+      <!-- RESULT -->
+      <section class="card result" id="result-card" hidden>
+        <h2 class="card-title" id="result-title">Resultado</h2>
+
+        <div class="meter-wrap">
+          <svg class="meter" viewBox="0 0 200 200" role="img" aria-label="Porcentaje de compatibilidad">
+            <circle class="meter-bg" cx="100" cy="100" r="84" />
+            <circle class="meter-fg" id="meter-fg" cx="100" cy="100" r="84" />
+            <text class="meter-num" id="meter-num" x="100" y="96" text-anchor="middle">0%</text>
+            <text class="meter-love" id="meter-love" x="100" y="126" text-anchor="middle">0/10</text>
+          </svg>
+          <div class="verdict" id="verdict">Tal para cual</div>
+          <p class="verdict-sub" id="verdict-sub"></p>
+        </div>
+
+        <div class="zodiac" id="zodiac-box" hidden>
+          <span class="zodiac-pill" id="zodiac-a"></span>
+          <span class="zodiac-heart">💞</span>
+          <span class="zodiac-pill" id="zodiac-b"></span>
+          <p id="zodiac-verdict" class="zodiac-verdict"></p>
+        </div>
+
+        <div class="advice">
+          <h3>💌 Consejos para ti</h3>
+          <ul id="advice-list"></ul>
+        </div>
+
+        <div class="result-actions">
+          <button class="btn btn-ghost" id="share-btn">📋 Copiar resultado</button>
+          <button class="btn btn-love" id="restart-btn">💘 Probar con otra persona</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer class="footer">
+      <p>🗼 <strong>PARIS</strong> · Hecho con 💛 y 💗, y matemáticas imprecisas · Los resultados no sustituyen a la terapia ni al sentido común.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
